@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEATHER APP</title>
-    <link href = "style.css" rel = "stylesheet">
+    <title>Weather Mode Selection</title>
+
+    <link rel="stylesheet" href="index_style.css">
 </head>
+
 <body>
-<div class="container">
 
-    <h1 class="title">Weather App</h1>
+    <div class="container">
 
-    <div id="input">
-        <input type="text" placeholder="Enter city" id="city-input">
-        <button id="search-button">Search</button>
-    </div>
+        <h1 class="title">
+            Weather App
+        </h1>
 
-    <div id="output">
-
-        <div class="info-box">
-            <div class="info-title">Location</div>
-            <h1 id="city-location" class="info-value"></h1>
+        <div class="subtitle">
+            Choose how you want to fetch weather data
         </div>
 
-        <div class="info-box">
-            <div class="info-title">Temperature</div>
-            <h1 id="city-temperature" class="info-value"></h1>
-        </div>
+        <div id="choice">
 
-        <div class="info-box">
-            <div class="info-title">Local Time</div>
-            <h1 id="city-time" class="info-value"></h1>
+            <button id="current_location" class="choice-button">
+                Use Current Location
+            </button>
+
+            <button id="city_name" class="choice-button">
+                Enter City Name
+            </button>
+
         </div>
 
     </div>
 
-</div>
-    <script src = "script_new.js">
-    </script>
+    <script src="index.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APP</title>
+    <link href = "style.css" rel = "stylesheet">
+</head>
+<body>
+<div class="container">
+
+        <button id="back-button">
+            ← Back
+        </button>
+    <h1 class="title">Weather App</h1>
+    <div id="input">
+        <input type="text" placeholder="Enter city" id="city-input">
+        <button id="search-button">Search</button>
+    </div>
+
+    <div id="output">
+
+        <div class="info-box">
+            <div class="info-title">Location</div>
+            <h1 id="city-location" class="info-value"></h1>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title">Temperature</div>
+            <h1 id="city-temperature" class="info-value"></h1>
+        </div>
+
+        <div class="info-box">
+            <div class="info-title">Local Time</div>
+            <h1 id="city-time" class="info-value"></h1>
+        </div>
+
+    </div>
+
+</div>
+    <script src = "city_name.js">
+    </script>
+</body>
+</html>

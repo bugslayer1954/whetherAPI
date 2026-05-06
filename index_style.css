@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #0a0a0a;
+    --white: #f2f0eb;
+    --accent: #d4401a;
+    --mid: #c8c4bc;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--white);
+
+    font-family: 'IBM Plex Sans', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 2rem;
+
+    overflow: hidden;
+}
+
+/* background dot pattern */
+body::before {
+    content: '';
+
+    position: fixed;
+    inset: 0;
+
+    background-image:
+        radial-gradient(circle, #00000018 1px, transparent 1px);
+
+    background-size: 28px 28px;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 620px;
+
+    background: var(--white);
+
+    border: 2px solid var(--black);
+
+    overflow: hidden;
+}
+
+/* top thick strip */
+.container::before {
+    content: '';
+
+    display: block;
+
+    height: 6px;
+
+    background: var(--black);
+}
+
+.title {
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: clamp(3rem, 8vw, 5.5rem);
+
+    letter-spacing: 0.05em;
+
+    line-height: 1;
+
+    padding: 1.5rem 2rem 0.8rem;
+
+    border-bottom: 2px solid var(--black);
+}
+
+.title::before {
+    content: 'WEATHER NAVIGATION';
+
+    display: block;
+
+    font-family: 'IBM Plex Mono', monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.2em;
+
+    color: var(--accent);
+
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    padding: 1rem 2rem;
+
+    border-bottom: 2px solid var(--black);
+
+    font-family: 'IBM Plex Mono', monospace;
+
+    font-size: 0.8rem;
+
+    color: #5a5a5a;
+
+    letter-spacing: 0.08em;
+}
+
+#choice {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.choice-button {
+    position: relative;
+
+    border: none;
+    background: transparent;
+
+    padding: 3rem 1.5rem;
+
+    cursor: pointer;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 0.08em;
+
+    color: var(--black);
+
+    border-right: 2px solid var(--black);
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.choice-button:last-child {
+    border-right: none;
+}
+
+/* hover accent line */
+.choice-button::after {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+
+    height: 4px;
+
+    background: var(--accent);
+
+    transition: width 0.3s ease;
+}
+
+.choice-button:hover::after {
+    width: 100%;
+}
+
+.choice-button:hover {
+    background: #ebe7df;
+}
+
+.choice-button:active {
+    transform: scale(0.98);
+}
+
+/* responsive */
+@media (max-width: 600px) {
+
+    .title {
+        font-size: 3rem;
+    }
+
+    #choice {
+        grid-template-columns: 1fr;
+    }
+
+    .choice-button {
+        border-right: none;
+        border-bottom: 2px solid var(--black);
+    }
+
+    .choice-button:last-child {
+        border-bottom: none;
+    }
+}
