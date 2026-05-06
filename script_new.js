@@ -14,8 +14,10 @@ button.addEventListener('click', async() =>
     const city = input.value;
    const city_data = await getdata(city);
     console.log(city_data);
-    city_location.innerText = `Country:${city_data.location.country} latitude:${city_data.location.lat} longitude: ${city_data.location.lon}`
-    city_temp.innerText = `temperature(in degree centigrade): ${city_data.current.temp_c} temperature(in fahrenheit): ${city_data.current.temp_f} `
-    city_time.innerText = `Localtime: ${city_data.location.localtime}`
+   city_location.innerText = `${city_data.location.name}, ${city_data.location.country}`
+
+city_temp.innerText = `${city_data.current.temp_c}°C / ${city_data.current.temp_f}°F`
+
+city_time.innerText = city_data.location.localtime
 
 })
